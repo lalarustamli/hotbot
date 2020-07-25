@@ -25,6 +25,7 @@ def listen():
         return verify_webhook(request)
     if request.method == "POST":
         message = request.get_json()
+        print (message)
         return message
 
 
