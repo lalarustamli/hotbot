@@ -1,4 +1,5 @@
 from hotbot import app
+from flask import request
 
 @app.route('/')
 def index():
