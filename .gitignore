@@ -1,0 +1,7 @@
+*.wpr
+__pycache__/
+.idea/
+dist/
+hotbot.egg-info/
+venv/
+
