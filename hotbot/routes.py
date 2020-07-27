@@ -29,6 +29,7 @@ def listen():
             for event in events:
                 if is_user_message(event):
                     respond(event)
+        return message
 
 
 
