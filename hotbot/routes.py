@@ -1,3 +1,4 @@
+import requests
 from hotbot import app
 from flask import request
 
