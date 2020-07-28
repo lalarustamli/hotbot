@@ -7,6 +7,7 @@ def wit_response(user_message):
     """ Return Wit.ai <entity> and <value> of message based on <user_message>
     """
     resp = client.message(user_message)
+    intent = None
     entity = None
     value = None
 
