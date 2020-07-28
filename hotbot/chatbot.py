@@ -28,6 +28,11 @@ def respond(event):
         message = "Hi! How can  help?"
     elif intent == "order":
         message = " Your ordered a " + str(value)
+    elif intent == 'language':
+        if value == 'russian':
+            message = "Конешнооо"
+        elif value == 'azerbaijani':
+            message = "Əlbəttə ki :D"
     send_message(sender_id, message)
 
 def send_message(recipient_id, message):

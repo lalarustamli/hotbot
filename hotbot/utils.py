@@ -19,3 +19,4 @@ def wit_response(user_message):
         pass
     return (intent,entity, value)
 
+print(wit_response("speaking по русски ?"))
