@@ -1,5 +1,5 @@
 import requests
-
+from hotbot import utils
 TOKEN = "EAAEFyjOzpW0BALLnIubQe3tMmM2EEhLgZAum0mqCddLwlWoWTgle0zPuwAolv9OJsebnAsg6JRFFKzaTcirSFlM5YZAHC0fwQXJZCWZArKdGoQ9okaIDrLLHe5FjAGPFcbZClNNOYDPyxw6CK2wmCgN2VbB0PYufGJNaaLkbbB5bWSLs2ZCBPR"
 API = "https://graph.facebook.com/v7.0/me/messages"
 
@@ -21,7 +21,13 @@ def respond(event):
     """Formulate a response to the user and pass it on to a send_message function.
     """
     sender_id = event['sender']['id']
-    message = "Hello you back!"
+    user_message = event['message']['text']
+    intent, entity, value = utils.wit_response(user_message)
+    message = "I didn't catch you, sorry :("
+    if intent == 'greeting':
+        message = "Hi! How can  help?"
+    elif intent == "order":
+        message = " Your ordered a " + str(value)
     send_message(sender_id, message)
 
 def send_message(recipient_id, message):
